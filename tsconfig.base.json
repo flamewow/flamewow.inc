@@ -13,7 +13,10 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@flamewow.inc/hash": ["libs/hash/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

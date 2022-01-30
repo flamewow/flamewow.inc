@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "gql-learning": "apps/gql-learning"
+    "gql-learning": "apps/gql-learning",
+    "hash": "libs/hash"
   }
 }
