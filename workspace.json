@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "gql-learning": "apps/gql-learning",
-    "hash": "libs/hash"
+    "hash": "libs/hash",
+    "prisma-learning": "apps/prisma-learning"
   }
 }
