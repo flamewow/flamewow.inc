@@ -1,0 +1,52 @@
+{
+  "root": "apps/gql-learning",
+  "sourceRoot": "apps/gql-learning/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/gql-learning",
+        "main": "apps/gql-learning/src/main.ts",
+        "tsConfig": "apps/gql-learning/tsconfig.app.json",
+        "assets": ["apps/gql-learning/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/gql-learning/src/environments/environment.ts",
+              "with": "apps/gql-learning/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "gql-learning:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/gql-learning/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/gql-learning"],
+      "options": {
+        "jestConfig": "apps/gql-learning/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
