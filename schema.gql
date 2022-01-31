@@ -1,0 +1,113 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""user"""
+type UserEntity {
+  uuid: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  name: String!
+  email: String!
+  password: String!
+  role: Float!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type SignInResult {
+  user: UserEntity!
+  accessToken: String!
+  refreshToken: String!
+}
+
+type RefreshTokenResult {
+  user: UserEntity!
+  accessToken: String!
+  refreshToken: String!
+}
+
+type PaginationInfo {
+  startCursor: String
+  endCursor: String
+  countTotal: Int!
+  countBefore: Int
+  countAfter: Int
+}
+
+"""recipe"""
+type RecipeEntity {
+  uuid: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  title: String!
+  description: String
+  ingredients: [String!]!
+  cuisine(first: Int, after: String, last: Int, before: String): CuisineEntity!
+}
+
+type PaginatedRecipe {
+  edges: [RecipeEntityEdge!]
+  paginationInfo: PaginationInfo
+}
+
+type RecipeEntityEdge {
+  cursor: String!
+  node: RecipeEntity!
+}
+
+"""cuisine"""
+type CuisineEntity {
+  uuid: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  name: String!
+  recipes(first: Int, after: String, last: Int, before: String): [RecipeEntity!]
+}
+
+type PaginatedCuisine {
+  edges: [CuisineEntityEdge!]
+  paginationInfo: PaginationInfo
+}
+
+type CuisineEntityEdge {
+  cursor: String!
+  node: CuisineEntity!
+}
+
+type Query {
+  cuisines(first: Int, after: String, last: Int, before: String): PaginatedCuisine!
+  recipe(uuid: String!): RecipeEntity!
+  recipes(first: Int, after: String, last: Int, before: String): PaginatedRecipe!
+}
+
+type Mutation {
+  signIn(input: SignInInput!): SignInResult!
+  signUp(input: SignUpInput!): UserEntity!
+  refreshToken(refreshToken: String!): RefreshTokenResult!
+  addCuisine(name: String!): CuisineEntity!
+  addRecipe(newRecipeData: NewRecipeInput!): RecipeEntity!
+  removeRecipe(id: String!): Boolean!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+}
+
+input NewRecipeInput {
+  cuisineUUID: String!
+  title: String!
+  description: String
+  ingredients: [String!]!
+}
+
+type Subscription {
+  userSignedIn: UserEntity!
+}
