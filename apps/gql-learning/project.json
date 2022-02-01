@@ -10,7 +10,8 @@
         "outputPath": "dist/apps/gql-learning",
         "main": "apps/gql-learning/src/main.ts",
         "tsConfig": "apps/gql-learning/tsconfig.app.json",
-        "assets": ["apps/gql-learning/src/assets"]
+        "assets": ["apps/gql-learning/src/assets"],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
@@ -45,6 +46,13 @@
       "options": {
         "jestConfig": "apps/gql-learning/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "docker": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx build gql-learning", "docker build -f ./apps/gql-learning/Dockerfile . -t gql-learning"],
+        "parallel": false
       }
     }
   },

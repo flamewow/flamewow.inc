@@ -2,7 +2,7 @@ import { config as dotenvConfig } from 'dotenv';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import path = require('path');
 
-const envFilePath = path.join(__dirname, '../../../.env');
+const envFilePath = path.join(__dirname, './assets/.env');
 const { parsed } = dotenvConfig({ path: envFilePath });
 
 console.log(`envFilePath: ${envFilePath}`);

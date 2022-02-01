@@ -1,0 +1,113 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""cuisine"""
+type CuisineEntity {
+  createdAt: Date!
+  name: String!
+  recipes(after: String, before: String, first: Int, last: Int): [RecipeEntity!]
+  updatedAt: Date!
+  uuid: ID!
+}
+
+type CuisineEntityEdge {
+  cursor: String!
+  node: CuisineEntity!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Mutation {
+  addCuisine(name: String!): CuisineEntity!
+  addRecipe(newRecipeData: NewRecipeInput!): RecipeEntity!
+  refreshToken(refreshToken: String!): RefreshTokenResult!
+  removeRecipe(id: String!): Boolean!
+  signIn(input: SignInInput!): SignInResult!
+  signUp(input: SignUpInput!): UserEntity!
+}
+
+input NewRecipeInput {
+  cuisineUUID: String!
+  description: String
+  ingredients: [String!]!
+  title: String!
+}
+
+type PaginatedCuisine {
+  edges: [CuisineEntityEdge!]
+  paginationInfo: PaginationInfo
+}
+
+type PaginatedRecipe {
+  edges: [RecipeEntityEdge!]
+  paginationInfo: PaginationInfo
+}
+
+type PaginationInfo {
+  countAfter: Int
+  countBefore: Int
+  countTotal: Int!
+  endCursor: String
+  startCursor: String
+}
+
+type Query {
+  cuisines(after: String, before: String, first: Int, last: Int): PaginatedCuisine!
+  recipe(uuid: String!): RecipeEntity!
+  recipes(after: String, before: String, first: Int, last: Int): PaginatedRecipe!
+}
+
+"""recipe"""
+type RecipeEntity {
+  createdAt: Date!
+  cuisine(after: String, before: String, first: Int, last: Int): CuisineEntity!
+  description: String
+  ingredients: [String!]!
+  title: String!
+  updatedAt: Date!
+  uuid: ID!
+}
+
+type RecipeEntityEdge {
+  cursor: String!
+  node: RecipeEntity!
+}
+
+type RefreshTokenResult {
+  accessToken: String!
+  refreshToken: String!
+  user: UserEntity!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+type SignInResult {
+  accessToken: String!
+  refreshToken: String!
+  user: UserEntity!
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+}
+
+type Subscription {
+  userSignedIn: UserEntity!
+}
+
+"""user"""
+type UserEntity {
+  createdAt: Date!
+  email: String!
+  name: String!
+  password: String!
+  role: Float!
+  updatedAt: Date!
+  uuid: ID!
+}

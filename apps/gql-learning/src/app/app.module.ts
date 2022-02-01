@@ -3,11 +3,13 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoggerModule } from 'nestjs-pino';
 import { v4 as uuid } from 'uuid';
+import * as path from 'path';
 import { config } from './core/config';
 import { AuthModule } from './modules/auth/auth.module';
 import { RecipesModule } from './modules/recipes/recipes.module';
 import { ComplexityPlugin } from './core/plugins/complexity.plugin';
 import { LoggingPlugin } from './core/plugins/logging.plugin';
+import { default as pinoPretty } from 'pino-pretty';
 
 @Module({
   imports: [
@@ -16,7 +18,8 @@ import { LoggingPlugin } from './core/plugins/logging.plugin';
     TypeOrmModule.forRoot(config.databaseConfig),
     GraphQLModule.forRoot({
       // TODO: move to config
-      autoSchemaFile: 'schema.gql',
+      autoSchemaFile: path.join(process.cwd(), '/apps/gql-learning/src/schema.gql'),
+      sortSchema: true,
       installSubscriptionHandlers: true, // enabled for graphql playground
       // subscriptions: {
       //   'graphql-ws': true,
@@ -25,17 +28,14 @@ import { LoggingPlugin } from './core/plugins/logging.plugin';
     LoggerModule.forRoot({
       // TODO: move to config
       pinoHttp: {
-        transport: {
-          target: 'pino-pretty',
-          options: {
-            colorize: true,
-            ignore: 'pid,hostname',
-            singleLine: true,
-            levelFirst: true,
-            timestampKey: 'time',
-            translateTime: true,
-          },
-        },
+        stream: pinoPretty({
+          colorize: true,
+          ignore: 'pid,hostname',
+          singleLine: true,
+          levelFirst: true,
+          timestampKey: 'time',
+          translateTime: true,
+        }),
         autoLogging: false,
         genReqId: () => uuid(),
         useLevel: 'debug',
@@ -43,7 +43,7 @@ import { LoggingPlugin } from './core/plugins/logging.plugin';
           req: () => undefined, //(req: any) => ({ id: req.id, method: req.method }),
           res: () => undefined, //(res: any) => ({ id: res.statusCode }),
         },
-        // customProps: (req: any) => ({ id: req.id, ts: new Date() }),
+        reqCustomProps: (req) => ({ id: req.id, ts: new Date() }),
       },
     }),
   ],
