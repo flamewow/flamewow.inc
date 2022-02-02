@@ -48,10 +48,17 @@
         "passWithNoTests": true
       }
     },
-    "docker": {
+    "docker_build": {
       "builder": "@nrwl/workspace:run-commands",
       "options": {
         "commands": ["nx build gql-learning", "docker build -f ./apps/gql-learning/Dockerfile . -t gql-learning"],
+        "parallel": false
+      }
+    },
+    "docker_compose_local": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["docker-compose -f ./apps/gql-learning/docker-compose.local.yml up -d"],
         "parallel": false
       }
     }
