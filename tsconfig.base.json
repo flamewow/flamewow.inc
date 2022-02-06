@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@flamewow.inc/hash": ["libs/hash/src/index.ts"]
+      "@flamewow.inc/hash": ["libs/hash/src/index.ts"],
+      "@flamewow.inc/shared/nest/hash": ["libs/shared/nest/hash/src/index.ts"],
+      "@flamewow.inc/shared/ts//helpers": ["libs/shared/ts/helpers/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-export const file2String = (path) => {
+export const file2String = (path: string) => {
   const buffer = fs.readFileSync(path);
   return buffer.toString();
 };
@@ -19,7 +19,7 @@ export const getEnumList = (enumName: any): string[] => {
 
 export const plainEnumToString = (type: any, enumType: any): string => enumType[type];
 
-export const getKeyByValue = (object, value) => {
+export const getKeyByValue = (object: any, value: any) => {
   return Object.keys(object).find((key) => object[key] === value);
 };
 

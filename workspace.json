@@ -2,7 +2,8 @@
   "version": 2,
   "projects": {
     "gql-learning": "apps/gql-learning",
-    "hash": "libs/hash",
-    "prisma-learning": "apps/prisma-learning"
+    "prisma-learning": "apps/prisma-learning",
+    "shared-nest-hash": "libs/shared/nest/hash",
+    "shared-ts-helpers": "libs/shared/ts/helpers"
   }
 }

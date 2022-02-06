@@ -5,9 +5,9 @@ import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { ITokens } from './auth.interfaces';
 import { UserEntity } from '../../db/entities/user.entity';
-import { HashService } from '@flamewow.inc/hash';
 import { PG_ERR_CODES } from '../../db/pg-err-codes';
 import { config } from '../../core/config';
+import { HashService } from '@flamewow.inc/shared/nest/hash';
 
 @Injectable()
 export class AuthService {

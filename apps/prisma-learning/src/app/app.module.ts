@@ -1,4 +1,4 @@
-import { HashModule } from '@flamewow.inc/hash';
+import { HashModule } from '@flamewow.inc/shared/nest/hash';
 import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
