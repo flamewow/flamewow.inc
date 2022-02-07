@@ -1,4 +1,4 @@
-import { HashService } from '@flamewow.inc/shared/nest/hash';
+import { HashService } from '@flamewow.inc/nest/hash';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

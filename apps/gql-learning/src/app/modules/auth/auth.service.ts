@@ -4,7 +4,7 @@ import { SignUpInput } from './dto/inputs';
 import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { ITokens } from './auth.interfaces';
-import { HashService } from '@flamewow.inc/shared/nest/hash';
+import { HashService } from '@flamewow.inc/nest/hash';
 import { UserEntity } from '@gql-learning/db/entities/user.entity';
 import { PG_ERR_CODES } from '@gql-learning/db/pg-err-codes';
 import { config } from '@gql-learning/core/config';

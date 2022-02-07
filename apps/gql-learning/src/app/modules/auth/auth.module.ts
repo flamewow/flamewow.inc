@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
 import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy';
 import { JwtAccessStrategy } from './strategies/jwt-auth.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
-import { HashModule } from '@flamewow.inc/shared/nest/hash';
+import { HashModule } from '@flamewow.inc/nest/hash';
 import { UserEntity } from '@gql-learning/db/entities/user.entity';
 import { config } from '@gql-learning/core/config';
 

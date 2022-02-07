@@ -35,6 +35,7 @@ export class HashService {
   async comparePassword(providedPass: string, storedPass: string): Promise<boolean> {
     const { N, salt } = this.parsePasswordHash(storedPass);
     const encodedProvidedPass = await this.getHash(providedPass, salt, N);
+
     return encodedProvidedPass === storedPass;
   }
 }

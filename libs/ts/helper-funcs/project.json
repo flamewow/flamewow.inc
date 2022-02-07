@@ -1,20 +1,20 @@
 {
-  "root": "libs/shared/ts/helpers",
-  "sourceRoot": "libs/shared/ts/helpers/src",
+  "root": "libs/ts/helper-funcs",
+  "sourceRoot": "libs/ts/helper-funcs/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/shared/ts/helpers/**/*.ts"]
+        "lintFilePatterns": ["libs/ts/helper-funcs/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/ts/helpers"],
+      "outputs": ["coverage/libs/ts/helper-funcs"],
       "options": {
-        "jestConfig": "libs/shared/ts/helpers/jest.config.js",
+        "jestConfig": "libs/ts/helper-funcs/jest.config.js",
         "passWithNoTests": true
       }
     }

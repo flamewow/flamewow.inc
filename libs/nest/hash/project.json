@@ -1,20 +1,20 @@
 {
-  "root": "libs/hash",
-  "sourceRoot": "libs/hash/src",
+  "root": "libs/nest/hash",
+  "sourceRoot": "libs/nest/hash/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/hash/**/*.ts"]
+        "lintFilePatterns": ["libs/nest/hash/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/hash"],
+      "outputs": ["coverage/libs/nest/hash"],
       "options": {
-        "jestConfig": "libs/hash/jest.config.js",
+        "jestConfig": "libs/nest/hash/jest.config.js",
         "passWithNoTests": true
       }
     }

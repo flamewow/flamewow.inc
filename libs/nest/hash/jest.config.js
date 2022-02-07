@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'shared-ts--helpers',
-  preset: '../../../../jest.preset.js',
+  displayName: 'nest--hash',
+  preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../../coverage/libs/shared/ts/helpers',
+  coverageDirectory: '../../../coverage/libs/nest/hash',
 };

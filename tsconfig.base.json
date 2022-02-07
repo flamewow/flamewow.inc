@@ -15,10 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gql-learning/*": ["apps/gql-learning/src/app/*"],
-
-      "@flamewow.inc/shared/nest/hash": ["libs/shared/nest/hash/src/index.ts"],
-      "@flamewow.inc/shared/ts/helpers": ["libs/shared/ts/helpers/src/index.ts"]
+      "@flamewow.inc/nest/hash": ["libs/nest/hash/src/index.ts"],
+      "@flamewow.inc/shared/ts/helpers": ["libs/shared/ts/helpers/src/index.ts"],
+      "@flamewow.inc/ts/helper-funcs": ["libs/ts/helper-funcs/src/index.ts"],
+      
+      "@gql-learning/*": ["apps/gql-learning/src/app/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
