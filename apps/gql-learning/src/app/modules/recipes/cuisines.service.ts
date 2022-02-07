@@ -1,9 +1,9 @@
+import { CuisineEntity, PaginatedCuisine } from '@gql-learning/db/entities/cuisine.entity';
+import { paginate } from '@gql-learning/db/misc/paginate';
+import { PaginationCursorArgs } from '@gql-learning/db/misc/pagination-args';
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FindManyOptions, Repository } from 'typeorm';
-import { CuisineEntity, PaginatedCuisine } from '../../db/entities/cuisine.entity';
-import { paginate } from '../../db/misc/paginate';
-import { PaginationCursorArgs } from '../../db/misc/pagination-args';
 
 @Injectable()
 export class CuisinesService {

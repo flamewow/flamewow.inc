@@ -1,7 +1,7 @@
 FROM node:16
 WORKDIR /app
 COPY ./dist/apps/gql-learning .
-COPY ./dist/apps/gql-learning/assets/.env.docker ./assets/.env
+COPY ./dist/apps/gql-learning/.env.docker ./.env
 
 #make sure port is alligned with docker-compose
 ENV PORT=4001 

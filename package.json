@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\""
   },
   "private": true,
   "dependencies": {

@@ -1,9 +1,8 @@
-
+import { CuisineEntity } from '@gql-learning/db/entities/cuisine.entity';
+import { PaginatedRecipe, RecipeEntity } from '@gql-learning/db/entities/recipe.entity';
+import { PaginationCursorArgs } from '@gql-learning/db/misc/pagination-args';
 import { NotFoundException, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { CuisineEntity } from '../../db/entities/cuisine.entity';
-import { PaginatedRecipe, RecipeEntity } from '../../db/entities/recipe.entity';
-import { PaginationCursorArgs } from '../../db/misc/pagination-args';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { CuisinesLoader } from './cuisines.loader';
 import { NewRecipeInput } from './dto/new-recipe.input';

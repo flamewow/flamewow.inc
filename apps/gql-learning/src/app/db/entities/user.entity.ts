@@ -1,6 +1,6 @@
+import { USER_ROLES_ENUM } from '@gql-learning/core/enums';
 import { ObjectType, Field } from '@nestjs/graphql';
 import { Entity, Column } from 'typeorm';
-import { USER_ROLES_ENUM } from '../../core/enums';
 import { AbstractBaseEntity } from './abstract/abstract-base.entity';
 
 @Entity('users')

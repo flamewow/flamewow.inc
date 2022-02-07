@@ -4,10 +4,10 @@ import { SignUpInput } from './dto/inputs';
 import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { ITokens } from './auth.interfaces';
-import { UserEntity } from '../../db/entities/user.entity';
-import { PG_ERR_CODES } from '../../db/pg-err-codes';
-import { config } from '../../core/config';
 import { HashService } from '@flamewow.inc/shared/nest/hash';
+import { UserEntity } from '@gql-learning/db/entities/user.entity';
+import { PG_ERR_CODES } from '@gql-learning/db/pg-err-codes';
+import { config } from '@gql-learning/core/config';
 
 @Injectable()
 export class AuthService {

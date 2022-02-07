@@ -1,4 +1,4 @@
-import { USER_ROLES_ENUM } from '../../core/enums';
+import { USER_ROLES_ENUM } from '@gql-learning/core/enums';
 
 export interface IJwtPayload {
   uuid: string;

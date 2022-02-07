@@ -1,5 +1,5 @@
+import { UserEntity } from '@gql-learning/db/entities/user.entity';
 import { Field, ObjectType } from '@nestjs/graphql';
-import { UserEntity } from '../../../db/entities/user.entity';
 
 @ObjectType()
 export class SignInResult {

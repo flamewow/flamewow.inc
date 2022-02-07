@@ -1,12 +1,4 @@
-import { config as dotenvConfig } from 'dotenv';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import path = require('path');
-
-const envFilePath = path.join(__dirname, './assets/.env');
-const { parsed } = dotenvConfig({ path: envFilePath });
-
-console.log(`envFilePath: ${envFilePath}`);
-console.log(parsed);
 
 class Config {
   readonly host: string = process.env.HOST;
@@ -30,13 +22,13 @@ class Config {
     port: parseInt(process.env.DB_PORT) || 5432,
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DATABASE,
+    database: process.env.DB_DATABASE,
     autoLoadEntities: true,
-    entities: ['./dist/apps/gql-learning/src/app/**/*.entity.js'],
-    migrations: ['./dist/apps/gql-learning/src/app/db/migrations/*.js'],
+    entities: ['dist/apps/gql-learning/src/app/**/*.entity.js'],
+    migrations: ['dist/apps/gql-learning/src/app/db/migrations/*.js'],
     cli: {
-      entitiesDir: './src/db/entities',
-      migrationsDir: './src/db/migrations',
+      entitiesDir: 'apps/gql-learning/src/app/db/entities',
+      migrationsDir: 'apps/gql-learning/src/app/db/migrations',
     },
     synchronize: true, // TODO: remove it once db schema is stabilized
     logging: false, // set to true for SQL queries debugging
@@ -45,3 +37,5 @@ class Config {
 
 // toDo: move to ConfigModule later
 export const config = new Config();
+
+console.log(config); // debug

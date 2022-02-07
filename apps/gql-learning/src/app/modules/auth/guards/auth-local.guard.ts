@@ -1,7 +1,7 @@
 import { GqlExecutionContext } from '@nestjs/graphql';
 import { Injectable, ExecutionContext, Logger, UnauthorizedException } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { LOCAL } from '../../../core/constants';
+import { LOCAL } from '@gql-learning/core/constants';
 
 @Injectable()
 export class AuthLocalGuard extends AuthGuard(LOCAL) {

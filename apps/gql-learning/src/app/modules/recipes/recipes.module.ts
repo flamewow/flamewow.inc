@@ -1,9 +1,8 @@
-
+import { DateScalar } from '@gql-learning/core/scalars/date.scalar';
+import { CuisineEntity } from '@gql-learning/db/entities/cuisine.entity';
+import { RecipeEntity } from '@gql-learning/db/entities/recipe.entity';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CuisineEntity } from '../../db/entities/cuisine.entity';
-import { RecipeEntity } from '../../db/entities/recipe.entity';
-import { DateScalar } from '../../core/scalars/date.scalar';
 import { AuthModule } from '../auth/auth.module';
 import { CuisinesLoader } from './cuisines.loader';
 import { CuisinesResolver } from './cuisines.resolver';

@@ -1,7 +1,7 @@
 import { GqlExecutionContext } from '@nestjs/graphql';
 import { Injectable, Logger, UnauthorizedException, ExecutionContext } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { JWT_REFRESH } from '../../../core/constants';
+import { JWT_REFRESH } from '@gql-learning/core/constants';
 
 @Injectable()
 export class JwtRefreshGuard extends AuthGuard(JWT_REFRESH) {

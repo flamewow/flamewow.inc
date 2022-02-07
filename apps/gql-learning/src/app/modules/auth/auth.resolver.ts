@@ -6,8 +6,8 @@ import { RefreshTokenResult, SignInResult } from './dto/results';
 import { AuthLocalGuard } from './guards/auth-local.guard';
 import { JwtRefreshGuard } from './guards/jwt-refresh.guard';
 import { PubSub } from 'graphql-subscriptions';
-import { UserEntity } from '../../db/entities/user.entity';
-import { User } from '../../core/decorators/user.decorator';
+import { UserEntity } from '@gql-learning/db/entities/user.entity';
+import { User } from '@gql-learning/core/decorators/user.decorator';
 
 const pubSub = new PubSub();
 

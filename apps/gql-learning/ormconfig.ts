@@ -1,4 +1,4 @@
-import { config } from "./src/app/core/config";
+import { config } from './src/app/core/config';
 
 export = [
   {

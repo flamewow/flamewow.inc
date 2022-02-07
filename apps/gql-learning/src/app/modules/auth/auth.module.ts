@@ -7,9 +7,9 @@ import { AuthService } from './auth.service';
 import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy';
 import { JwtAccessStrategy } from './strategies/jwt-auth.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
-import { UserEntity } from '../../db/entities/user.entity';
-import { config } from '../../core/config';
 import { HashModule } from '@flamewow.inc/shared/nest/hash';
+import { UserEntity } from '@gql-learning/db/entities/user.entity';
+import { config } from '@gql-learning/core/config';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserEntity]), PassportModule, JwtModule.register({ secret: config.jwtAccessSecret }), HashModule],

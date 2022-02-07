@@ -2,9 +2,9 @@ import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { NewRecipeInput } from './dto/new-recipe.input';
 import { FindConditions, FindManyOptions, Repository } from 'typeorm';
-import { PaginatedRecipe, RecipeEntity } from '../../db/entities/recipe.entity';
-import { PaginationCursorArgs } from '../../db/misc/pagination-args';
-import { paginate } from '../../db/misc/paginate';
+import { PaginatedRecipe, RecipeEntity } from '@gql-learning/db/entities/recipe.entity';
+import { PaginationCursorArgs } from '@gql-learning/db/misc/pagination-args';
+import { paginate } from '@gql-learning/db/misc/paginate';
 
 @Injectable()
 export class RecipesService {

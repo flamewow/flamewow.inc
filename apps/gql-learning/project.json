@@ -18,12 +18,8 @@
           "optimization": true,
           "extractLicenses": true,
           "inspect": false,
-          "fileReplacements": [
-            {
-              "replace": "apps/gql-learning/src/environments/environment.ts",
-              "with": "apps/gql-learning/src/environments/environment.prod.ts"
-            }
-          ]
+          "generatePackageJson": true,
+          "progress": true
         }
       }
     },
@@ -48,14 +44,14 @@
         "passWithNoTests": true
       }
     },
-    "docker_build": {
+    "docker-build": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": ["nx build gql-learning", "docker build -f ./apps/gql-learning/Dockerfile . -t gql-learning"],
         "parallel": false
       }
     },
-    "docker_compose_local": {
+    "docker-compose-local": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": ["docker-compose -f ./apps/gql-learning/docker-compose.local.yml up -d"],
