@@ -8,6 +8,10 @@ export class JwtAuthGuard extends AuthGuard(JWT_ACCESS) {
   private logger: Logger = new Logger(JwtAuthGuard.name);
 
   handleRequest(err: any, user: any, info: any) {
+    if (process.env.AUTH_DEBUG) {
+      return {};
+    }
+
     if (info) {
       this.logger.debug(info);
     }

@@ -1,4 +1,4 @@
-import { DateScalar } from '@gql-learning/core/scalars/date.scalar';
+import { DateScalar } from '@flamewow.inc/nest/gql-common';
 import { CuisineEntity } from '@gql-learning/db/entities/cuisine.entity';
 import { RecipeEntity } from '@gql-learning/db/entities/recipe.entity';
 import { Module } from '@nestjs/common';

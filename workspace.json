@@ -3,7 +3,7 @@
   "projects": {
     "gql-learning": "apps/gql-learning",
     "nest--hash": "libs/nest/hash",
-    "nest--gql-plugins": "libs/nest/gql-plugins",
+    "nest--gql-common": "libs/nest/gql-common",
     "prisma-learning": "apps/prisma-learning",
     "ts--helper-funcs": "libs/ts/helper-funcs"
   }

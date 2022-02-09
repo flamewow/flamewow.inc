@@ -26,7 +26,8 @@
     "serve": {
       "executor": "@nrwl/node:execute",
       "options": {
-        "buildTarget": "gql-learning:build"
+        "buildTarget": "gql-learning:build",
+        "inspect": true
       }
     },
     "lint": {

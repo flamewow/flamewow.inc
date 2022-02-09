@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "command": "nx serve gql-learning",
+      "name": "run gql-learning",
+      "request": "launch",
+      "type": "node-terminal"
+    }
+  ]
+}

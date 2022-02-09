@@ -7,7 +7,7 @@ import { AuthLocalGuard } from './guards/auth-local.guard';
 import { JwtRefreshGuard } from './guards/jwt-refresh.guard';
 import { PubSub } from 'graphql-subscriptions';
 import { UserEntity } from '@gql-learning/db/entities/user.entity';
-import { User } from '@gql-learning/core/decorators/user.decorator';
+import { User } from '@gql-learning/decorators/user.decorator';
 
 const pubSub = new PubSub();
 
