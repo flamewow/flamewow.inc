@@ -15,10 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@flamewow.inc/nest/gql-plugins": ["libs/nest/gql-plugins/src/index.ts"],
       "@flamewow.inc/nest/hash": ["libs/nest/hash/src/index.ts"],
-      "@flamewow.inc/shared/ts/helpers": ["libs/shared/ts/helpers/src/index.ts"],
       "@flamewow.inc/ts/helper-funcs": ["libs/ts/helper-funcs/src/index.ts"],
-      
       "@gql-learning/*": ["apps/gql-learning/src/app/*"]
     }
   },

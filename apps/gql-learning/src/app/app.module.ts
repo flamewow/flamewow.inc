@@ -7,9 +7,8 @@ import * as path from 'path';
 import { config } from './core/config';
 import { AuthModule } from './modules/auth/auth.module';
 import { RecipesModule } from './modules/recipes/recipes.module';
-import { ComplexityPlugin } from './core/plugins/complexity.plugin';
-import { LoggingPlugin } from './core/plugins/logging.plugin';
 import { default as pinoPretty } from 'pino-pretty';
+import { ComplexityPlugin, LoggingPlugin } from '@flamewow.inc/nest/gql-plugins';
 
 @Module({
   imports: [

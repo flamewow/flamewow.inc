@@ -1,0 +1,23 @@
+{
+  "root": "libs/nest/gql-plugins",
+  "sourceRoot": "libs/nest/gql-plugins/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/nest/gql-plugins/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nest/gql-plugins"],
+      "options": {
+        "jestConfig": "libs/nest/gql-plugins/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
