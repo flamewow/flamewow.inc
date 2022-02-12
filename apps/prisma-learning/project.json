@@ -9,6 +9,7 @@
       "options": {
         "outputPath": "dist/apps/prisma-learning",
         "main": "apps/prisma-learning/src/main.ts",
+        "tsPlugins": ["@nestjs/swagger/plugin"],
         "tsConfig": "apps/prisma-learning/tsconfig.app.json",
         "assets": ["apps/prisma-learning/src/assets"]
       },
