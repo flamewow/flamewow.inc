@@ -5,6 +5,12 @@
       "name": "run gql-learning",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "command": "nx serve prisma-learning",
+      "name": "run prisma-learning",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
